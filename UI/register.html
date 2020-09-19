@@ -8,7 +8,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
         <link rel="stylesheet" href="css/main.css">
-        <title>Log in - {{company_name}}</title>
+        <link rel="stylesheet" type="text/css" href="css/register.css">
+        <title>Register - {{company_name}}</title>
     </head>
     <body>
         <div class="main">
@@ -89,19 +90,19 @@
             </div>
             <div class="hero centre-container hero-small">
                 <div class="vertical-centre">
-                    <h1>Log in</h1>
+                    <h1>Register</h1>
                 </div>
             </div>
             <div class="opencs-breadcrumbs">
                 <div class="container">
                     <div class="opencs-breadcrumbs-container">
-                        <p><a class="opencs-breadcrumb" href="index.html">Home</a> / <a class="opencs-breadcrumb" href="login.html">Log in</a></p>
+                        <p><a class="opencs-breadcrumb" href="index.html">Home</a> / <a class="opencs-breadcrumb" href="register.html">Register</a></p>
                     </div>
                 </div>
             </div>
-            <div class="login-form">
+            <div class="register-form">
                 <div class="container">
-                    <form class="login-form-element" action="auth/email" method="POST">
+                    <form class="form-register" action="auth/register" method="POST">
                         <div class="form-group">
                             <label for="emailAddress">Email address</label>
                             <input type="email" class="form-control" id="emailAddressInput" aria-describedby="emailAddress">
