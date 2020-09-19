@@ -105,20 +105,21 @@
                 <div class="container">
                     <form class="form-register" action="auth/register" method="POST">
                         <h4>Personal information</h4>
+                        <small>Fields marked with <span class="text-red">*</span> are required.</small>
                         <hr>
                         <div class="form-row">
                             <div class="col">
-                                <label><strong>Full name:</strong></label>
+                                <label><strong>Full name:</strong><span class="text-red">*</span></label>
                                 <input type="text" name="name" placeholder="John Doe" class="form-control">
                             </div>
                             <div class="col">
-                                <label><strong>Email address:</strong></label>
+                                <label><strong>Email address:</strong><span class="text-red">*</span></label>
                                 <input type="email" name="Email" placeholder="john@example.com" class="form-control">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
-                                <label><strong>Phone number:</strong></label>
+                                <label><strong>Phone number:</strong><span class="text-red">*</span></label>
                                 <input type="tel" name="phone" id="phone" placeholder="000 0000 0000" class="form-control">
                             </div>
                             <div class="col">
@@ -126,58 +127,61 @@
                             </div>
                         </div>
                         <h4>Billing address</h4>
+                        <small>Fields marked with <span class="text-red">*</span> are required.</small>
                         <hr>
                         <div class="form-row">
                             <div class="col">
-                                <label><strong>Company name</strong> (optional)</label>
+                                <label><strong>Company name</strong></label>
                                 <input type="text" name="company" placeholder="Example S.A.R.L." class="form-control">
                             </div>
                             <div class="col">
-                                <label><strong>Street address</strong> (required)</label>
+                                <label><strong>Street address</strong><span class="text-red">*</span></label>
                                 <input type="text" name="address1" placeholder="1st example st." class="form-control">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
-                                <label><strong>Street address 2</strong> (optional)</label>
+                                <label><strong>Street address 2</strong></label>
                                 <input type="text" name="address2" placeholder="2nd example st." class="form-control">
                             </div>
                             <div class="col">
-                                <label><strong>City</strong> (required)</label>
+                                <label><strong>City</strong><span class="text-red">*</span></label>
                                 <input type="text" name="city" placeholder="Example city" class="form-control">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
-                                <label><strong>Postcode</strong> (required)</label>
+                                <label><strong>Postcode</strong><span class="text-red">*</span></label>
                                 <input type="text" name="postcode" placeholder="1BZ2" class="form-control">
                             </div>
                             <div class="col"></div>
                         </div>
                         <div class="form-row">
                             <div class="col">
-                                <label><strong>Country</strong> (required)</label>
+                                <label><strong>Country</strong><span class="text-red">*</span></label>
                                 <select class="crs-country form-control" name="country" id="country" data-region-id="region"></select>
                             </div>
                             <div class="col">
-                                <label><strong>State / region</strong> (required)</label>
+                                <label><strong>State / region</strong><span class="text-red">*</span></label>
                                 <select class="form-control" id="region" name="region"></select>
                             </div>
                         </div>
                         <h4>Account</h4>
+                        <small>Fields marked with <span class="text-red">*</span> are required.</small>
                         <hr>
                         <div class="form-row">
                             <div class="col">
-                                <label><strong>Password</strong> (required)</label>
+                                <label><strong>Password</strong><span class="text-red">*</span></label>
                                 <input type="password" name="password" placeholder="Password" class="form-control" id="pw">
                             </div>
                             <div class="col">
-                                <label><strong>Confirm password</strong> (required)</label>
+                                <label><strong>Confirm password</strong><span class="text-red">*</span></label>
                                 <input type="password" name="confirm-password" placeholder="Confirm password" class="form-control">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
+                                <label><strong>Password strength</strong></label>
                                 <div id="progress-container"></div>
                             </div>
                         </div>
@@ -204,6 +208,9 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script src="js/intlTelInput.min.js"></script>
+        <script src="js/pw-score.js"></script>
+        <script src="js/password-score-options.js"></script>
+        <script src="js/bootstrap-strength-meter.js"></script>
         <script>
             var input = document.querySelector("#phone");
             window.intlTelInput(input, {
@@ -211,23 +218,22 @@
             });
             //var number = iti.getNumber();
             $(document).ready(function() {
-                $('#pw').strengthMeter('progressBar', {
+            $('#pw').strengthMeter('progressBar', {
                     container: $('#progress-container'),
                     base: 80,
                     hierarchy: {
-                    '0':'progress-bar-danger',
-                    '25':'progress-bar-warning',
-                    '50':'progress-bar-success'
+                        '0': 'progress-bar-danger',
+                        '25': 'progress-bar-warning',
+                        '50': 'progress-bar-success'
                     },
                     passwordScore: {
                     options: [],
-                    append:true
-                    }
-                });
+                    append: true
+                }
+            });
             });
 
         </script>
         <script src="js/countryRegion.js"></script>
-        <script src="js/bootstrap-strength-meter.js"></script>
     </body>
 </html>

@@ -21,3 +21,11 @@
 .iti { 
     width: 100%;
 }
+
+.text-red {
+    color: red;
+}
+
+#progress-container {
+    border-radius: 0 !important;
+}
