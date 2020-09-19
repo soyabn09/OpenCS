@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/register.css">
+        <link rel="stylesheet" href="css/intlTelInput.min.css">
         <title>Register - {{company_name}}</title>
     </head>
     <body>
@@ -103,17 +104,65 @@
             <div class="register-form">
                 <div class="container">
                     <form class="form-register" action="auth/register" method="POST">
-                        <div class="form-group">
-                            <label for="emailAddress">Email address</label>
-                            <input type="email" class="form-control" id="emailAddressInput" aria-describedby="emailAddress">
+                        <h4>Personal information</h4>
+                        <hr>
+                        <div class="form-row">
+                            <div class="col">
+                                <label><strong>Full name:</strong></label>
+                                <input type="text" name="name" placeholder="John Doe" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label><strong>Email address:</strong></label>
+                                <input type="email" name="Email" placeholder="john@example.com" class="form-control">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="passwordInput">
+                        <div class="form-row">
+                            <div class="col">
+                                <label><strong>Phone number:</strong></label>
+                                <input type="tel" name="phone" id="phone" placeholder="000 0000 0000" class="form-control">
+                            </div>
+                            <div class="col">
+
+                            </div>
                         </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="staySignedIn">
-                            <label class="form-check-label" for="staySignedIn">Stay signed in</label>
+                        <h4>Billing address</h4>
+                        <hr>
+                        <div class="form-row">
+                            <div class="col">
+                                <label><strong>Company name</strong> (optional)</label>
+                                <input type="text" name="company" placeholder="Example S.A.R.L." class="form-control">
+                            </div>
+                            <div class="col">
+                                <label><strong>Street address</strong> (required)</label>
+                                <input type="text" name="address1" placeholder="1st example st." class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <label><strong>Street address 2</strong> (optional)</label>
+                                <input type="text" name="address2" placeholder="2nd example st." class="form-control">
+                            </div>
+                            <div class="col">
+                                <label><strong>City</strong> (required)</label>
+                                <input type="text" name="city" placeholder="Example city" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <label><strong>Postcode</strong> (required)</label>
+                                <input type="text" name="postcode" placeholder="1BZ2" class="form-control">
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <label><strong>Country</strong> (required)</label>
+                                <select class="crs-country form-control" name="country" id="country" data-region-id="region"></select>
+                            </div>
+                            <div class="col">
+                                <label><strong>State / region</strong> (required)</label>
+                                <select class="form-control" id="region" name="region"></select>
+                            </div>
                         </div>
                         <div class="login-buttons">
                             <button type="submit" class="btn btn-theme">Log in</button>
@@ -138,5 +187,14 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="js/intlTelInput.min.js"></script>
+        <script>
+            var input = document.querySelector("#phone");
+            window.intlTelInput(input, {
+                initialCountry: "is"
+            });
+            //var number = iti.getNumber();
+        </script>
+        <script src="js/countryRegion.js"></script>
     </body>
 </html>
