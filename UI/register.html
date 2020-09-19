@@ -7,8 +7,9 @@
         <meta name="Description" content="Enter your description here"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-        <link rel="stylesheet" href="../resources/assets/css/main.css">
-        <title>Portal home - {{company_name}}</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/register.css">
+        <title>Register - {{company_name}}</title>
     </head>
     <body>
         <div class="main">
@@ -51,7 +52,7 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item active">
+                                    <li class="nav-item">
                                         <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -69,7 +70,7 @@
                                 </ul>
                                 <div class="form-inline my-1 my-lg-0">
                                     <ul class="navbar-nav mr-auto">
-                                        <li class="nav-item dropdown">
+                                        <li class="nav-item dropdown active">
                                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 Account
                                             </a>
@@ -87,34 +88,38 @@
                     </nav>
                 </div>
             </div>
-            <div class="hero centre-container hero-big">
+            <div class="hero centre-container hero-small">
                 <div class="vertical-centre">
-                    <h1>What would you like to do today?</h1>
+                    <h1>Register</h1>
                 </div>
             </div>
-            <div class="action-strip bg-theme-light">
+            <div class="opencs-breadcrumbs">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 action-title">
-                            <h2>How can we help you?</h2>
-                        </div>
-                        <a href="order"><div class="col-md action-strip-button">
-                            <i class="far fa-hdd"></i>
-                            <p>Order hosting</p>
-                        </div></a>
-                        <a href="billing"><div class="col-md action-strip-button">
-                            <i class="fas fa-credit-card"></i>
-                            <p>Billing</p>
-                        </div></a>
-                        <a href="billing"><div class="col-md action-strip-button">
-                            <i class="fas fa-life-ring"></i>
-                            <p>Get help</p>
-                        </div></a>
-                        <a href="billing"><div class="col-md action-strip-button">
-                            <i class="fas fa-columns"></i>
-                            <p>Open panel</p>
-                        </div></a>
+                    <div class="opencs-breadcrumbs-container">
+                        <p><a class="opencs-breadcrumb" href="index.html">Home</a> / <a class="opencs-breadcrumb" href="register.html">Register</a></p>
                     </div>
+                </div>
+            </div>
+            <div class="register-form">
+                <div class="container">
+                    <form class="form-register" action="auth/register" method="POST">
+                        <div class="form-group">
+                            <label for="emailAddress">Email address</label>
+                            <input type="email" class="form-control" id="emailAddressInput" aria-describedby="emailAddress">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="passwordInput">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="staySignedIn">
+                            <label class="form-check-label" for="staySignedIn">Stay signed in</label>
+                        </div>
+                        <div class="login-buttons">
+                            <button type="submit" class="btn btn-theme">Log in</button>
+                            <a class="btn btn-secondary" href="reset.html">Reset password</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -125,7 +130,7 @@
                         <p>Copyright &copy; 2020 Rascry Limited P.T.C.<br>Registered in the Federal Republic of Arctischia.<br><a href="https://opencs.rascry.org" target="_blank">Website</a> &bull; <a href="mailto:info@rascry.org" target="_blank">info@rascry.org</a></p>
                     </div>
                     <div class="col-md footer-logo">
-                        <a href="https://www.opencs.rascry.org/" target="_blank"><img src="../resources/assets/img/logo.png" width="100"></a>
+                        <a href="https://www.opencs.rascry.org/" target="_blank"><img src="img/logo.png" width="100"></a>
                     </div>
                 </div>
             </div>
