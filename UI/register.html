@@ -169,16 +169,20 @@
                         <div class="form-row">
                             <div class="col">
                                 <label><strong>Password</strong> (required)</label>
-                                <input type="password" name="password" placeholder="Password" class="form-control">
+                                <input type="password" name="password" placeholder="Password" class="form-control" id="pw">
                             </div>
                             <div class="col">
                                 <label><strong>Confirm password</strong> (required)</label>
                                 <input type="password" name="confirm-password" placeholder="Confirm password" class="form-control">
                             </div>
                         </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div id="progress-container"></div>
+                            </div>
+                        </div>
                         <div class="login-buttons">
-                            <button type="submit" class="btn btn-theme">Log in</button>
-                            <a class="btn btn-secondary" href="reset.html">Reset password</a>
+                            <button type="submit" class="btn btn-theme">Create account</button>
                         </div>
                     </form>
                 </div>
@@ -206,7 +210,24 @@
                 initialCountry: "is"
             });
             //var number = iti.getNumber();
+            $(document).ready(function() {
+                $('#pw').strengthMeter('progressBar', {
+                    container: $('#progress-container'),
+                    base: 80,
+                    hierarchy: {
+                    '0':'progress-bar-danger',
+                    '25':'progress-bar-warning',
+                    '50':'progress-bar-success'
+                    },
+                    passwordScore: {
+                    options: [],
+                    append:true
+                    }
+                });
+            });
+
         </script>
         <script src="js/countryRegion.js"></script>
+        <script src="js/bootstrap-strength-meter.js"></script>
     </body>
 </html>
