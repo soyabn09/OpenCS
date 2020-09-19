@@ -35,6 +35,11 @@ html,body {
     }
 }
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% {  transform: rotate(359deg); }
+}
+
 .dropdown-menu {
     border-radius: 0px;
 }
