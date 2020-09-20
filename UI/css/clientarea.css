@@ -1,0 +1,46 @@
+.account-home {
+    margin-top: 20px;
+}
+
+.account-home .quicklinks .quicklink {
+    background-color: #f3f3f3;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.account-home .quicklinks .quicklink:hover {
+    background-color: #e2e2e2;
+    cursor: pointer;
+}
+
+.account-home .quicklinks .quicklink:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+
+.account-home .quicklinks .quicklink .icon {
+    color: rgb(192, 192, 192);
+    position: absolute;
+    font-size: 2.8rem;
+    top: 6px;
+    right: 12px;
+}
+
+hr.hr-blue {
+    background-color: blue;
+    height: 2px;
+}
+
+hr.hr-green {
+    background-color: green;
+    height: 2px;
+}
+
+hr.hr-red {
+    background-color: red;
+    height: 2px;
+}
+
+hr.hr-yellow {
+    background-color: yellow;
+    height: 2px;
+}
