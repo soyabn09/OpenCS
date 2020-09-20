@@ -125,3 +125,12 @@ hr.hr-yellow {
 .quiet-link {
     color: unset;
 }
+
+.service-info {
+    height: 300px;
+    background-color: rgba(0,0,0,.03);
+}
+
+.service-info .icon {
+    font-size: 5rem;
+}
