@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md">
                         <div class="logo">
-                            <h2>OpenCS</h2>
+                            <h2><%= company_name%></h2>
                         </div>
                     </div>
                     <div class="col-md-8 header-col-right">
@@ -16,15 +16,15 @@
                                     Language
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">English</a>
-                                    <a class="dropdown-item" href="#">Íslenska</a>
-                                    <a class="dropdown-item" href="#">Norsk</a>
-                                    <a class="dropdown-item" href="#">Macedonian</a>
-                                    <a class="dropdown-item" href="#">Portugese</a>
+                                    <a class="dropdown-item" href="?locale=en">English</a>
+                                    <a class="dropdown-item" href="?locale=is">Íslenska</a>
+                                    <a class="dropdown-item" href="?locale=no">Norsk</a>
+                                    <a class="dropdown-item" href="?locale=mk">Македонски</a>
+                                    <a class="dropdown-item" href="?locale=pt">Portugese</a>
                                 </div>
                             </div>
                             <div class="button">
-                                <a href="/cart" class="btn btn-theme">View cart</a>
+                                <a href="/cart?locale=<%= locale%>" class="btn btn-theme">View cart</a>
                             </div>
                         </div>
                     </div>
@@ -41,8 +41,8 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -50,17 +50,17 @@
                                     Store
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="all.html">Browse all</a>
+                                    <a class="dropdown-item" href="#all">Browse all</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Minecraft</a>
-                                    <a class="dropdown-item" href="#">Web</a>
-                                    <a class="dropdown-item" href="#">Cloud</a>
+                                    <a class="dropdown-item" href="#minecraft">Minecraft</a>
+                                    <a class="dropdown-item" href="#web">Web</a>
+                                    <a class="dropdown-item" href="#cloud">Cloud</a>
                                 </div>
                             </li>
                         </ul>
                         <div class="form-inline my-1 my-lg-0">
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item dropdown active">
+                                <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Account
@@ -77,18 +77,5 @@
                     </div>
                 </div>
             </nav>
-        </div>
-    </div>
-    <div class="hero centre-container hero-small">
-        <div class="vertical-centre">
-            <h1>Log in</h1>
-        </div>
-    </div>
-    <div class="opencs-breadcrumbs">
-        <div class="container">
-            <div class="opencs-breadcrumbs-container">
-                <p><a class="opencs-breadcrumb" href="index.html">Home</a> / <a class="opencs-breadcrumb"
-                                                                                href="login.html">Log in</a></p>
-            </div>
         </div>
     </div>
