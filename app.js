@@ -1,39 +1,19 @@
-var dotenv = require("dotenv")
+const express = require("express");
+const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+const path = require('path');
+
+const app = express();
 dotenv.config()
-var express = require("express"),
-    mongoose = require("mongoose"),
-    passport = require("passport"),
-    bodyParser = require("body-parser"),
-    LocalStrategy = require("passport-local"),
-    passportLocalMongoose =
-        require("passport-local-mongoose"),
-    User = require("./models/user");
 
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb://localhost/auth_demo_app");
-
-var app = express();
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(require("express-session")({
-    secret: "Rusty is a dog",
-    resave: false,
-    saveUninitialized: false
-}));
+app.set('views', path.join(__dirname, '/themes'));
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
-
-//Theme setting
-let themedir = "themes/" + process.env.THEME + "/"
+//App Settings
+const theme = process.env.THEME || "opencs"
+const themedir = theme + "/"
+const port = process.env.PORT || 80;
 
 //=====================
 // ROUTES
@@ -42,10 +22,9 @@ let themedir = "themes/" + process.env.THEME + "/"
 app.use('/assets', express.static(themedir + 'assets/'))
 
 app.get("/", function (req, res) {
-    res.render(themedir + "pages/index");
+    res.render(themedir + "pages/index", `{page_title: ""}`);
 });
 
-var port = process.env.PORT || 80;
 app.listen(port, function () {
-    console.log("App has started on port " + port);
+    console.log("App has started on port: " + port);
 }); 
