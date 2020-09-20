@@ -129,6 +129,7 @@ hr.hr-yellow {
 .service-info {
     height: 300px;
     background-color: rgba(0,0,0,.03);
+    margin-bottom: 15px;
 }
 
 .service-info .icon {
