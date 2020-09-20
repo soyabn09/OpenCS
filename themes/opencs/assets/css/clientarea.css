@@ -104,6 +104,10 @@ hr.hr-yellow {
     background-color: #f3f3f3;
 }
 
+.shortcut-active {
+    background-color: #f3f3f3;
+}
+
 .help-search .col-md-12 {
     padding: 0;
     margin-top: 15px;
