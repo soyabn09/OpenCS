@@ -1,25 +1,29 @@
 <%- include ("../partials/head", {page_title: page_title, company_name: company_name}) %>
 <%- include ("../partials/header", {page_title: page_title}) %>
-<div class="login-form">
-    <div class="container">
-        <form class="login-form-element" action="/login" method="POST">
-            <div class="form-group">
-                <label for="emailAddress">Email address</label>
-                <input type="email" class="form-control" id="emailAddressInput" aria-describedby="emailAddress">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="passwordInput">
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="staySignedIn">
-                <label class="form-check-label" for="staySignedIn">Remember me?</label>
-            </div>
-            <div class="login-buttons">
-                <button type="submit" class="btn btn-theme">Login</button>
-                <a class="btn btn-secondary" href="/auth/reset">Reset password</a>
-            </div>
-        </form>
+<div class="hero centre-container hero-big">
+    <div class="vertical-centre">
+        <h1>What would you like to do today?</h1>
     </div>
 </div>
-<%- include ("../partials/footer") %>
+<div class="action-strip bg-theme-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 action-title">
+                <h2>How can we help you?</h2>
+            </div>
+            <a href="/clientarea/?locale=en"><div class="col-md action-strip-button">
+                    <i class="far fa-hdd"></i>
+                    <p>Order services</p>
+                </div></a>
+            <a href="/clientarea/support?locale=en"><div class="col-md action-strip-button">
+                    <i class="fas fa-life-ring"></i>
+                    <p>Get help</p>
+                </div></a>
+            <a href="/clientarea/?locale=en"><div class="col-md action-strip-button">
+                    <i class="fas fa-columns"></i>
+                    <p>Open clientarea</p>
+                </div></a>
+        </div>
+    </div>
+</div>
+<%- include ("../partials/footer", {email: company_email}) %>
