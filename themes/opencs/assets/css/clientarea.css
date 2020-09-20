@@ -2,6 +2,19 @@
     margin-top: 20px;
 }
 
+.account-home .quicklinks {
+    margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .account-home .quicklinks {
+        margin: 15px;
+    }
+    .account-home .quicklinks .quicklink:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}
+
 .account-home .quicklinks .quicklink {
     background-color: #f3f3f3;
     padding: 10px;
@@ -43,4 +56,59 @@ hr.hr-red {
 hr.hr-yellow {
     background-color: yellow;
     height: 2px;
+}
+
+.infocard {
+    padding: 0;
+    margin-top: 15px;
+}
+
+.infocard:not(:first-child) {
+    padding-left: 7.5px;
+}
+
+.infocard:not(:last-child) {
+    padding-right: 7.5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .infocard:not(:first-child) {
+        padding-left: 0px;
+    }
+    
+    .infocard:not(:last-child) {
+        padding-right: 0px;
+    }
+}
+
+.sidecard {
+    margin: 0 15px 15px 15px;
+    width: 100%;
+}
+
+.shortcuts {
+    padding: 0;
+}
+
+.shortcut-button {
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(204, 204, 204, 0.322);
+    padding: 8px;
+    color: rgb(71, 71, 71);
+}
+
+.shortcut-button:hover {
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+    background-color: #f3f3f3;
+}
+
+.help-search .col-md-12 {
+    padding: 0;
+    margin-top: 15px;
+}
+
+.quiet-link {
+    color: unset;
 }
