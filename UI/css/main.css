@@ -57,6 +57,26 @@ html,body {
     border-radius: 0;
 }
 
+.card {
+    border-radius: 0
+}
+
+.card * {
+    border-radius: 0;
+}
+
+.display-block {
+    display: block;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.no-margin {
+    margin: 0;
+}
+
 .form-control {
     border-radius: 0;
 }
