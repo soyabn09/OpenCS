@@ -73,6 +73,27 @@ html,body {
     width: 100%;
 }
 
+.collapse-button {
+    border: none;
+    background-color: unset;
+    transition: box-shadow 0.10s;
+}
+
+.collapse-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.collapse-button i::before {
+    font-family: "Font Awesome 5 Free"; 
+    content: "\f078";
+}
+
+.collapse-button.collapsed i::before {
+    font-family: "Font Awesome 5 Free"; 
+    content: "\f077";
+}
+
 .no-margin {
     margin: 0;
 }
@@ -128,6 +149,12 @@ div.dropdown {
 .hero {
     background-color: #0d4363;
     color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .hero .vertical-centre h1 {
+        font-size: 2rem;
+    }
 }
 
 .hero-big {
