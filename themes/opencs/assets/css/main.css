@@ -26,6 +26,11 @@ html,body {
     text-align: right;
 }
 
+.thead-theme {
+    background-color: rgba(0,0,0,.03);
+    border: 1px solid #ccc;
+}
+
 @media only screen and (max-width: 768px) {
     .header-col-right {
         text-align: left;
