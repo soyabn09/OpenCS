@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:current-buster-slim
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm ci --only=production
